@@ -13,7 +13,7 @@ services:
       - PGID=1000
       - TZ=USA/Chigaco
     volumes:
-      - ${CONFIG_PATH}/firefox:/config
+      - ${CONFIG_PATH}/${CONTAINER_NAME}:/config
       - ${DOWNLOAD_PATH}:/config/Downloads
     shm_size: "512mb"
     restart: unless-stopped
