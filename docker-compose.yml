@@ -1,0 +1,19 @@
+services:
+  firefox:
+    image: linuxserver/firefox:latest
+    container_name: ${CONTAINER_NAME}
+    network_mode: bridge
+    cpu_shares: 1024
+    ports:
+      - ${PORT}:3000
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=USA/Chigaco
+    volumes:
+      - ${CONFIG_PATH}/firefox:/config
+      - ${DOWNLOAD_PATH}:/config/Downloads
+    shm_size: "512mb"
+    restart: unless-stopped
