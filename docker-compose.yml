@@ -1,6 +1,6 @@
 services:
   firefox:
-    image: linuxserver/firefox:latest
+    image: linuxserver/firefox:kasm
     container_name: ${CONTAINER_NAME}
     network_mode: bridge
     cpu_shares: 1024
